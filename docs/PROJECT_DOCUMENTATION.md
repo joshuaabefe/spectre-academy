@@ -82,4 +82,4 @@ spectre academy/
 
 ## Author
 
-Prepared by Joshua Abefe as a frontend submission package for Spectre Academy Admission Portal.
+Prepared by [Joshua Abefe](https://joshuaabefe.github.io) as a frontend submission package for Spectre Academy Admission Portal.
