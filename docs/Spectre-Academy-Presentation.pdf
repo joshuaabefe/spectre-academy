@@ -1,0 +1,99 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 7 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 7 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 581 >>
+stream
+BT
+/F1 24 Tf
+72 740 Td
+(Spectre Academy Admission Portal) Tj
+0 -28 Td
+(Frontend Project Presentation) Tj
+0 -28 Td
+() Tj
+0 -28 Td
+(Project Summary) Tj
+0 -28 Td
+(- Multi-step student admission form) Tj
+0 -28 Td
+(- Responsive desktop and mobile layout) Tj
+0 -28 Td
+(- Progress bar, validation, and review flow) Tj
+0 -28 Td
+(- Local storage support for saved progress) Tj
+0 -28 Td
+() Tj
+0 -28 Td
+(Branding Update) Tj
+0 -28 Td
+(- Renamed from Westbrook Academy to Spectre Academy) Tj
+0 -28 Td
+(- Added a custom logo and favicon) Tj
+0 -28 Td
+(- Updated the interface color system) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 485 >>
+stream
+BT
+/F1 24 Tf
+72 740 Td
+(Submission Assets) Tj
+0 -28 Td
+() Tj
+0 -28 Td
+(Included in this repository:) Tj
+0 -28 Td
+(- Documentation) Tj
+0 -28 Td
+(- Color palette reference link) Tj
+0 -28 Td
+(- Screenshots folder) Tj
+0 -28 Td
+(- Presentation PDF) Tj
+0 -28 Td
+() Tj
+0 -28 Td
+(Deployment) Tj
+0 -28 Td
+(Publish with GitHub Pages, Netlify, or Vercel) Tj
+0 -28 Td
+(and place the live project URL in README.md.) Tj
+0 -28 Td
+() Tj
+0 -28 Td
+(Project Name: Spectre Academy Admission Portal) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000373 00000 n 
+0000001004 00000 n 
+0000001539 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+1609
+%%EOF

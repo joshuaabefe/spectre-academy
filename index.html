@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Admission Portal - Spectre Academy</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <!-- Removed unused font-weight:300 to trim font payload -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <img src="assets/spectre-logo.svg" alt="" />
+        </span>
+        <div>
+          <strong>Spectre Academy</strong>
+          <small>Admission Portal | 2026</small>
+        </div>
+      </div>
+      <div class="header-badge">Online Admissions Open</div>
+    </div>
+  </header>
+
+  <main class="portal-wrapper">
+
+    <!--
+      Sidebar is aria-hidden because it's purely decorative/visual
+      on desktop. The inner nav aria-label is removed — it's redundant
+      when the parent is already hidden from assistive technology.
+    -->
+    <aside class="side-panel" aria-hidden="true">
+      <div class="side-content">
+        <h2 class="side-title">Step Into Your<br/><em>Future</em></h2>
+        <p class="side-desc">Complete this form to apply for admission to Spectre Academy for the 2026/2027 academic year.</p>
+
+        <div class="side-steps">
+          <!--
+            data-original stores the original label so JS can restore it
+            after overwriting with "✓" when navigating back to a step.
+          -->
+          <div class="side-step" data-step="1">
+            <span class="side-step-num" data-original="01">01</span>
+            <span class="side-step-label">Personal Information</span>
+          </div>
+          <div class="side-step" data-step="2">
+            <span class="side-step-num" data-original="02">02</span>
+            <span class="side-step-label">Education Details</span>
+          </div>
+          <div class="side-step" data-step="3">
+            <span class="side-step-num" data-original="03">03</span>
+            <span class="side-step-label">Guardian Information</span>
+          </div>
+          <div class="side-step" data-step="4">
+            <span class="side-step-num" data-original="04">04</span>
+            <span class="side-step-label">Review &amp; Submit</span>
+          </div>
+        </div>
+
+        <div class="side-note">
+          <span class="side-note-icon">💾</span>
+          Your progress is automatically saved.
+        </div>
+      </div>
+    </aside>
+
+    <section class="form-panel">
+
+      <!-- PROGRESS BAR -->
+      <div class="progress-wrapper" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-label="Form completion">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-label" id="progressLabel">Step 1 of 4 — 25%</span>
+      </div>
+
+      <!-- STEP INDICATOR DOTS -->
+      <div class="step-indicator" role="list" aria-label="Form progress steps">
+        <div class="step-dot active" data-step="1" role="listitem" aria-label="Step 1: Personal Information">
+          <span class="dot-num">1</span>
+          <span class="dot-label">Personal</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="2" role="listitem" aria-label="Step 2: Education">
+          <span class="dot-num">2</span>
+          <span class="dot-label">Education</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="3" role="listitem" aria-label="Step 3: Guardian">
+          <span class="dot-num">3</span>
+          <span class="dot-label">Guardian</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="4" role="listitem" aria-label="Step 4: Review">
+          <span class="dot-num">4</span>
+          <span class="dot-label">Review</span>
+        </div>
+      </div>
+
+      <!-- ================================================
+           STEP 1: PERSONAL INFORMATION
+      ================================================ -->
+      <div class="form-step active" id="step1">
+        <div class="step-header">
+          <span class="step-tag">Step 01</span>
+          <h1 class="step-title">Personal Information</h1>
+          <p class="step-subtitle">Please enter your personal details exactly as they appear on official documents.</p>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName" class="form-label">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="e.g. Amara" autocomplete="given-name" />
+            <span class="field-error" id="err-firstName"></span>
+            <span class="field-hint">Enter your legal first name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="form-label">Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" class="form-input" placeholder="e.g. Okafor" autocomplete="family-name" />
+            <span class="field-error" id="err-lastName"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="dob" class="form-label">Date of Birth <span class="req">*</span></label>
+            <input type="date" id="dob" name="dob" class="form-input" autocomplete="bday" />
+            <span class="field-error" id="err-dob"></span>
+            <span class="field-hint">You must be at least 10 years old to apply.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="gender" class="form-label">Gender <span class="req">*</span></label>
+            <select id="gender" name="gender" class="form-input form-select">
+              <option value="">— Select —</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Non-binary">Non-binary</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+            <span class="field-error" id="err-gender"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="amara@example.com" autocomplete="email" />
+            <span class="field-error" id="err-email"></span>
+            <span class="field-hint">A confirmation will be sent to this address.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 812 345 6789" autocomplete="tel" />
+            <span class="field-error" id="err-phone"></span>
+            <span class="field-hint">Include country code (e.g. +234).</span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="address" class="form-label">Home Address <span class="req">*</span></label>
+            <textarea id="address" name="address" class="form-input form-textarea" rows="3" placeholder="Street, City, State, Country" autocomplete="street-address"></textarea>
+            <span class="field-error" id="err-address"></span>
+          </div>
+        </div>
+
+        <div class="ai-helper">
+          <div class="ai-helper-header">
+            <span class="ai-icon">✦</span>
+            <strong>Smart Validation Assistant</strong>
+          </div>
+          <div class="ai-helper-body" id="aiOutput1">
+            <p class="ai-idle">Fill in the fields above — the assistant will check your entries and suggest improvements.</p>
+          </div>
+        </div>
+
+        <!--
+          form-actions--end uses justify-content:flex-end in CSS.
+          Removes the need for an empty <span> layout hack.
+        -->
+        <div class="form-actions form-actions--end">
+          <button type="button" class="btn btn-next" onclick="nextStep(1)">
+            Continue <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div><!-- /#step1 -->
+
+
+      <!-- ================================================
+           STEP 2: EDUCATION DETAILS
+      ================================================ -->
+      <div class="form-step" id="step2">
+        <div class="step-header">
+          <span class="step-tag">Step 02</span>
+          <h1 class="step-title">Education Details</h1>
+          <p class="step-subtitle">Tell us about your most recent academic background and achievements.</p>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="prevSchool" class="form-label">Previous School Name <span class="req">*</span></label>
+            <input type="text" id="prevSchool" name="prevSchool" class="form-input" placeholder="e.g. Lagos International Secondary School" />
+            <span class="field-error" id="err-prevSchool"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="gradeCompleted" class="form-label">Grade / Class Completed <span class="req">*</span></label>
+            <select id="gradeCompleted" name="gradeCompleted" class="form-input form-select">
+              <option value="">— Select grade —</option>
+              <option value="JSS1">JSS 1</option>
+              <option value="JSS2">JSS 2</option>
+              <option value="JSS3">JSS 3</option>
+              <option value="SS1">SS 1</option>
+              <option value="SS2">SS 2</option>
+              <option value="SS3 / WAEC">SS 3 / WAEC</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="field-error" id="err-gradeCompleted"></span>
+          </div>
+
+          <!--
+            max attribute removed from HTML; JS sets it dynamically to
+            new Date().getFullYear() so it stays in sync with the validator.
+          -->
+          <div class="form-group">
+            <label for="yearCompleted" class="form-label">Year of Completion <span class="req">*</span></label>
+            <input type="number" id="yearCompleted" name="yearCompleted" class="form-input" placeholder="e.g. 2025" min="2000" />
+            <span class="field-error" id="err-yearCompleted"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="gpa" class="form-label">GPA / Score / Grade <span class="req">*</span></label>
+            <input type="text" id="gpa" name="gpa" class="form-input" placeholder="e.g. 4.5 / 5.0 or 85% or A1" />
+            <span class="field-error" id="err-gpa"></span>
+            <span class="field-hint">Enter your most recent academic result in any format.</span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="achievements" class="form-label">Notable Achievements <span class="opt">(Optional)</span></label>
+            <textarea id="achievements" name="achievements" class="form-input form-textarea" rows="3" placeholder="Awards, competitions, leadership roles, etc."></textarea>
+            <span class="field-hint">Briefly describe any academic or co-curricular achievements.</span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="applyingFor" class="form-label">Applying for Entry Into <span class="req">*</span></label>
+            <select id="applyingFor" name="applyingFor" class="form-input form-select">
+              <option value="">— Select class —</option>
+              <option value="JSS1">JSS 1 (Year 7)</option>
+              <option value="JSS2">JSS 2 (Year 8)</option>
+              <option value="JSS3">JSS 3 (Year 9)</option>
+              <option value="SS1">SS 1 (Year 10)</option>
+              <option value="SS2">SS 2 (Year 11)</option>
+            </select>
+            <span class="field-error" id="err-applyingFor"></span>
+          </div>
+        </div>
+
+        <div class="ai-helper">
+          <div class="ai-helper-header">
+            <span class="ai-icon">✦</span>
+            <strong>Smart Validation Assistant</strong>
+          </div>
+          <div class="ai-helper-body" id="aiOutput2">
+            <p class="ai-idle">Fill in the fields above and the assistant will check your entries.</p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-back" onclick="prevStep(2)">
+            <span class="btn-arrow">←</span> Back
+          </button>
+          <button type="button" class="btn btn-next" onclick="nextStep(2)">
+            Continue <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div><!-- /#step2 -->
+
+
+      <!-- ================================================
+           STEP 3: GUARDIAN INFORMATION
+      ================================================ -->
+      <div class="form-step" id="step3">
+        <div class="step-header">
+          <span class="step-tag">Step 03</span>
+          <h1 class="step-title">Guardian Information</h1>
+          <p class="step-subtitle">Provide details of a parent or legal guardian who will be our primary contact.</p>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="guardianName" class="form-label">Guardian's Full Name <span class="req">*</span></label>
+            <input type="text" id="guardianName" name="guardianName" class="form-input" placeholder="e.g. Chukwuemeka Okafor" autocomplete="off" />
+            <span class="field-error" id="err-guardianName"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="relationship" class="form-label">Relationship to Student <span class="req">*</span></label>
+            <select id="relationship" name="relationship" class="form-input form-select">
+              <option value="">— Select —</option>
+              <option value="Father">Father</option>
+              <option value="Mother">Mother</option>
+              <option value="Uncle">Uncle</option>
+              <option value="Aunt">Aunt</option>
+              <option value="Grandparent">Grandparent</option>
+              <option value="Legal Guardian">Legal Guardian</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="field-error" id="err-relationship"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="guardianPhone" class="form-label">Guardian's Phone Number <span class="req">*</span></label>
+            <input type="tel" id="guardianPhone" name="guardianPhone" class="form-input" placeholder="+234 812 345 6789" autocomplete="off" />
+            <span class="field-error" id="err-guardianPhone"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="guardianEmail" class="form-label">Guardian's Email Address <span class="req">*</span></label>
+            <input type="email" id="guardianEmail" name="guardianEmail" class="form-input" placeholder="guardian@example.com" autocomplete="off" />
+            <span class="field-error" id="err-guardianEmail"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="guardianOccupation" class="form-label">Occupation <span class="opt">(Optional)</span></label>
+            <input type="text" id="guardianOccupation" name="guardianOccupation" class="form-input" placeholder="e.g. Engineer, Nurse, Business owner" />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="emergencyNote" class="form-label">Emergency Contact Note <span class="opt">(Optional)</span></label>
+            <textarea id="emergencyNote" name="emergencyNote" class="form-input form-textarea" rows="2" placeholder="Any special instructions for emergencies?"></textarea>
+          </div>
+        </div>
+
+        <div class="ai-helper">
+          <div class="ai-helper-header">
+            <span class="ai-icon">✦</span>
+            <strong>Smart Validation Assistant</strong>
+          </div>
+          <div class="ai-helper-body" id="aiOutput3">
+            <p class="ai-idle">Fill in the fields above and the assistant will check your entries.</p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-back" onclick="prevStep(3)">
+            <span class="btn-arrow">←</span> Back
+          </button>
+          <button type="button" class="btn btn-next" onclick="nextStep(3)">
+            Review Application <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div><!-- /#step3 -->
+
+
+      <!-- ================================================
+           STEP 4: REVIEW & CONFIRMATION
+      ================================================ -->
+      <div class="form-step" id="step4">
+        <div class="step-header">
+          <span class="step-tag">Step 04</span>
+          <h1 class="step-title">Review &amp; Confirm</h1>
+          <p class="step-subtitle">Please review all your details carefully. Use the Edit buttons to make corrections.</p>
+        </div>
+
+        <div class="review-container" id="reviewContainer"></div>
+
+        <div class="declaration-box">
+          <label class="checkbox-label">
+            <input type="checkbox" id="declarationCheck" />
+            <span class="checkbox-custom"></span>
+            <span>I confirm that all information provided is accurate and complete. I understand that false information may result in rejection of my application.</span>
+          </label>
+          <span class="field-error" id="err-declaration"></span>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-back" onclick="prevStep(4)">
+            <span class="btn-arrow">←</span> Back
+          </button>
+          <button type="button" class="btn btn-submit" id="submitBtn" onclick="submitApplication()">
+            Submit Application ✓
+          </button>
+        </div>
+      </div><!-- /#step4 -->
+
+
+      <!-- ================================================
+           SUCCESS SCREEN
+      ================================================ -->
+      <div class="form-step" id="stepSuccess">
+        <div class="success-screen">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h1 class="success-title">Application Submitted!</h1>
+          <p class="success-message">
+            Thank you for applying to <strong>Spectre Academy</strong>. Your application has been received
+            and a reference number has been generated below.
+          </p>
+          <div class="reference-box">
+            <span class="reference-label">Application Reference</span>
+            <span class="reference-number" id="referenceNumber"></span>
+          </div>
+          <p class="success-note">
+            A confirmation email will be sent to your registered email address. Our admissions team will
+            contact you within 5–7 business days.
+          </p>
+          <div class="success-actions">
+            <button type="button" class="btn btn-next" onclick="startOver()">
+              Submit Another Application
+            </button>
+            <button type="button" class="btn btn-outline" onclick="window.print()">
+              🖨 Print Summary
+            </button>
+          </div>
+        </div>
+      </div><!-- /#stepSuccess -->
+
+    </section><!-- /.form-panel -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Copyright &copy; 2026 Spectre Academy. All Rights Reserved.</span>
+      <span>Developed by <a href="https://joshuaabefe.github.io/" target="_blank" rel="noopener" class="footer-link">Joshua Abefe</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

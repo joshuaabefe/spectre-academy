@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spectre Academy Presentation</title>
+  <style>
+    :root {
+      --bg: #050913;
+      --panel: #10182e;
+      --panel-soft: #14213d;
+      --accent: #6ef2ff;
+      --accent-soft: #eafcff;
+      --text: #f5fbff;
+      --muted: #bad7e2;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #eef4fb;
+      color: #081120;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      margin: 0 auto 24px;
+      padding: 56px 64px;
+      page-break-after: always;
+      background:
+        radial-gradient(circle at top right, rgba(110, 242, 255, 0.18), transparent 28%),
+        linear-gradient(160deg, var(--panel) 0%, var(--bg) 100%);
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(110, 242, 255, 0.18);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    h1, h2 {
+      margin: 0 0 16px;
+      font-weight: 700;
+    }
+
+    h1 { font-size: 48px; }
+    h2 { font-size: 36px; }
+    p, li {
+      font-size: 24px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(110, 242, 255, 0.26);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: center;
+      height: calc(100% - 64px);
+    }
+
+    .mark {
+      width: 260px;
+      height: 260px;
+      border-radius: 42px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+      margin-left: auto;
+    }
+
+    .mark img {
+      width: 220px;
+      height: 220px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(110, 242, 255, 0.16);
+      border-radius: 24px;
+      padding: 24px 28px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .palette {
+      display: flex;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .swatch {
+      flex: 1;
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 180px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .s1 { background: #050913; }
+    .s2 { background: #10182e; }
+    .s3 { background: #182849; }
+    .s4 { background: #6ef2ff; color: #081120; }
+    .s5 { background: #eafcff; color: #081120; }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Frontend Project Presentation</div>
+        <h1>Spectre Academy Admission Portal</h1>
+        <p>
+          A modern multi-step admission experience designed to help students complete applications smoothly across desktop and mobile devices.
+        </p>
+      </div>
+      <div class="mark">
+        <img src="../assets/spectre-logo.svg" alt="Spectre Academy logo" />
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Project Summary</div>
+    <h2>Goals And Problem Solved</h2>
+    <div class="two-col">
+      <div class="card">
+        <p>
+          The portal replaces a rigid and confusing admission flow with a more structured, user-friendly interface.
+        </p>
+      </div>
+      <div class="card">
+        <ul>
+          <li>Multi-step guided application form</li>
+          <li>Progress tracking and review flow</li>
+          <li>Responsive design for mobile and desktop</li>
+          <li>Persistent local storage support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Design System</div>
+    <h2>Brand Direction</h2>
+    <div class="two-col">
+      <div class="card">
+        <p>
+          The identity uses a shield-based logo, dark academic tones, and bright cyan highlights to make the product feel premium, modern, and memorable.
+        </p>
+      </div>
+      <div class="card">
+        <ul>
+          <li>Rebrand from Westbrook Academy to Spectre Academy</li>
+          <li>Custom SVG logo and favicon</li>
+          <li>Updated interface colours and surfaces</li>
+          <li>Stronger visual hierarchy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Palette</div>
+    <h2>Colour Palette</h2>
+    <div class="palette">
+      <div class="swatch s1">#050913</div>
+      <div class="swatch s2">#10182E</div>
+      <div class="swatch s3">#182849</div>
+      <div class="swatch s4">#6EF2FF</div>
+      <div class="swatch s5">#EAFCFF</div>
+    </div>
+  </section>
+</body>
+</html>
