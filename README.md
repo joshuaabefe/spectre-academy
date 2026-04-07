@@ -4,7 +4,7 @@ Spectre Academy Admission Portal is a responsive frontend project for managing s
 
 ## Submission Checklist
 
-- Live project link: `....`
+- Live project link: [`spectre-academy`](https://spectre-academy-portal.netlify.app/)
 - Screenshots folder: [`screenshots/`](./screenshots)
 - Documentation: [`docs/PROJECT_DOCUMENTATION.md`](./docs/PROJECT_DOCUMENTATION.md)
 - Presentation slide PDF: [`docs/Spectre-Academy-Presentation.pdf`](./docs/Spectre-Academy-Presentation.pdf)
@@ -30,7 +30,7 @@ To create the final live link quickly with GitHub Pages:
 
 Your live URL will usually look like:
 
-`https://YOUR-GITHUB-USERNAME.github.io/.../`
+`https://spectre-academy-portal.netlify.app/`
 
 ## Screenshots
 
