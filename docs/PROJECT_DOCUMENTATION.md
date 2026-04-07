@@ -47,16 +47,6 @@ Traditional admission forms can feel overwhelming, outdated, and difficult to co
 
 The interface adapts across desktop, tablet, and mobile screens. Key UI elements such as the sidebar and badge simplify on smaller screens to preserve readability and usability.
 
-## Branding Update
-
-The project was rebranded from Westbrook Academy to Spectre Academy. This update included:
-
-- Name changes across the interface
-- New logo asset
-- New favicon
-- Updated visual palette
-- Updated local storage keys with backward compatibility for old saved data
-
 ## Folder Structure
 
 ```text
@@ -67,10 +57,10 @@ spectre academy/
 |-- docs/
 |   |-- COLOR-PALETTE.md
 |   |-- PROJECT_DOCUMENTATION.md
-|   |-- Spectre-Academy-Presentation.pdf
-|   `-- presentation.html
+|   `-- Spectre-Academy-Presentation.pdf
 |-- screenshots/
 |   |-- desktop-home.png
+|   |-- review-step.png
 |   `-- mobile-home.png
 |-- index.html
 |-- script.js
@@ -92,4 +82,4 @@ spectre academy/
 
 ## Author
 
-Prepared as a frontend submission package for Spectre Academy Admission Portal.
+Prepared by Joshua Abefe as a frontend submission package for Spectre Academy Admission Portal.
