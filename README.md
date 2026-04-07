@@ -4,7 +4,7 @@ Spectre Academy Admission Portal is a responsive frontend project for managing s
 
 ## Submission Checklist
 
-- Live project link: `Add your deployed GitHub Pages / Netlify / Vercel URL here after publishing`
+- Live project link: `....`
 - Screenshots folder: [`screenshots/`](./screenshots)
 - Documentation: [`docs/PROJECT_DOCUMENTATION.md`](./docs/PROJECT_DOCUMENTATION.md)
 - Presentation slide PDF: [`docs/Spectre-Academy-Presentation.pdf`](./docs/Spectre-Academy-Presentation.pdf)
@@ -30,14 +30,19 @@ To create the final live link quickly with GitHub Pages:
 
 Your live URL will usually look like:
 
-`https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY-NAME/`
+`https://YOUR-GITHUB-USERNAME.github.io/.../`
 
 ## Screenshots
 
 Project screenshots are stored in [`screenshots/`](./screenshots).
 
+After you add the image files below to the `screenshots` folder, they will preview directly on GitHub:
+
+![Desktop Home](screenshots/desktop-home.png)
+![Mobile Home](screenshots/mobile-home.png)
+![Review Step](screenshots/review-step.png)
+
 ## Notes
 
 - The form uses local storage so user progress can be restored after refresh.
-- Branding was updated from Westbrook Academy to Spectre Academy.
 - The repo includes a logo, favicon, documentation, palette reference, and a PDF presentation asset for submission.
